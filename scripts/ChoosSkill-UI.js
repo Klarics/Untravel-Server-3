@@ -1,6 +1,6 @@
 import {ActionFormData} from "@minecraft/server-ui";
 
-export function selectDon(playerid, itemid) {
+export function selectDon(playerid) {
     const gui = new ActionFormData();
     gui.title("§l§6Choose Skill");
     gui.body(

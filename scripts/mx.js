@@ -1,7 +1,7 @@
 import { world, system } from "@minecraft/server";
 
 import { selectDon } from "./ChoosSkill-UI";
-import { sendMsg, sendMsgToPlayer, getSkill } from "./utilsMx";
+import { sendMsg, sendMsgToPlayer, getSkill,prefix } from "./utilsMx";
 
 
 
@@ -20,7 +20,7 @@ world.events.beforeItemUse.subscribe((data) => {
   const source = data.source;
   const items = data.item;
   if (items.typeId === "minecraft:dirt" && getSkill(source, "Dones") == 0) {
-    selectDon(source, items);
+    selectDon(source);
   }
   if (items.typeId === "minecraft:ender_pearl" && getSkill(source, "Dones") == 2) {
     source.runCommandAsync(`give @s ender_pearl `);
@@ -33,7 +33,7 @@ world.events.beforeItemUse.subscribe((data) => {
 world.events.beforeChat.subscribe((eventData) => {
   const player = eventData.sender;
 
-  if (eventData.message.startsWith("-")) {
+  if (eventData.message.startsWith(prefix)) {
     eventData.cancel = true;
     switch (eventData.message) {
       case "-gmc":

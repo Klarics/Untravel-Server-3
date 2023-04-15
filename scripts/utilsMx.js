@@ -2,6 +2,10 @@ import { world } from "@minecraft/server";
 
 const overworld = world.getDimension("overworld");
 
+export const prefix = "-"
+export const debug = true
+
+
 
 export const sendMsgToPlayer = (target, message) => {
     try {
