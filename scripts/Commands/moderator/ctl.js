@@ -1,5 +1,5 @@
-import config from "../../paradox/data/config.js";
-import { crypto, sendMsg, sendMsgToPlayer } from "../../paradox/util.js";
+
+import { sendMsg, sendMsgToPlayer } from "../../utilsMx";
 
 export function ctl(message) {
     message.cancel = true;
