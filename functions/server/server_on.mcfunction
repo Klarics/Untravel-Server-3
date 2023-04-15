@@ -31,7 +31,7 @@ scoreboard objectives add _Death dummy §l§o§cMuertes
 scoreboard objectives add off dummy §l§o§binactivo
 scoreboard objectives add on dummy §l§o§bactivo
 scoreboard objectives add omega dummy §l§o§cTecutli-Omega
-scoreboard objectives setdisplay belowname kill
+#scoreboard objectives setdisplay below_name kill
 tellraw @a {"rawtext":[{"text":"§bScores instaladas con exito (§d5§f/§d10§b)!"}]}
 setblock -2 62 5 air
 tellraw @a {"rawtext":[{"text":"§bProtecciones Activadas (§d6§f/§d10§b)!"}]}
