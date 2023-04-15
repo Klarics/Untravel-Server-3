@@ -1,55 +1,28 @@
-//import "./paradox.js";
-import "./newMembersChoosSkill-UI";
-import { selectDon } from "./newMembersChoosSkill-UI";
 import { world, system } from "@minecraft/server";
 
-const overworld = world.getDimension("overworld");
-const sendMsg = (target, message) => {
-  try {
-    overworld.runCommandAsync(
-      `tellraw ${
-        /^ *@[spear]( *\[.*\] *)?$/.test(target)
-          ? target
-          : JSON.stringify(target)
-      } {"rawtext":[{"text":${JSON.stringify(
-        Array.isArray(message) ? message.join("\n\u00a7r") : message
-      )}}]}`
-    );
-  } catch {}
-};
-const sendMsgToPlayer = (target, message) => {
-  try {
-    target.runCommandAsync(
-      `tellraw @s {"rawtext":[{"text":${JSON.stringify(
-        Array.isArray(message) ? message.join("\n\u00a7r") : message
-      )}}]}`
-    );
-  } catch {}
-};
+import { selectDon } from "./ChoosSkill-UI";
+import { sendMsg, sendMsgToPlayer, getSkill } from "./utilsMx";
 
-// Subscribe to an event that calls every Minecraft tick
+
+
+
 system.runInterval(() => {
-  //    Spams the chat with "Hello World" with world.sendMessage function in API
-  // world.sendMessage("Hello World");   // funciona 1.19.73******
+  // world.sendMessage("Hello World");   // funciona 1.19.73****** como un say
   //or run a command in overworld dimension
   //using native API methods (such as world.sendMessage) are recommended whenever possible.
   overworld.runCommandAsync("function server/active"); //funciona 1.19.73 pero dice motor de script
 });
 
-function getSkill(playerSelect) {
-  return world.scoreboard
-    .getObjective("Dones")
-    .getScore(playerSelect.scoreboard);
-}
+
 
 // Item UI
 world.events.beforeItemUse.subscribe((data) => {
   const source = data.source;
   const items = data.item;
-  if (items.typeId === "minecraft:dirt" && getSkill(source) == 0) {
+  if (items.typeId === "minecraft:dirt" && getSkill(source, "Dones") == 0) {
     selectDon(source, items);
   }
-  if (items.typeId === "minecraft:ender_pearl" && getSkill(source) == 2) {
+  if (items.typeId === "minecraft:ender_pearl" && getSkill(source, "Dones") == 2) {
     source.runCommandAsync(`give @s ender_pearl `);
     source.runCommandAsync(`effect @p[scores={Dones=2},r=2] night_vision 10 0 true`);
     source.runCommandAsync(`effect @p[scores={Dones=2},r=2] regeneration 4 2 true`);
