@@ -1,7 +1,7 @@
 import { world, system } from "@minecraft/server";
 
 import { ChatFilter } from "./chat";
-import { selectDon } from "./ChoosSkill-UI";
+import { selectDon } from "./custom-ui/ChoosSkill-UI";
 import { getSkill } from "./utilsMx";
 
 const overworld = world.getDimension("overworld");
