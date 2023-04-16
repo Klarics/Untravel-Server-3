@@ -29,6 +29,8 @@ export function gmc(message, args) {
     if (!player.hasTag('staffstatus') && !player.hasTag('Adminer')) {
         return sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r§c You need to be §eServer-Op§r§c to use this command.`);
     }
+
+    
     if ((argCheck && args[0].toLowerCase() === "help")) {
     //    sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r§a This funtion is not aveable!`);
          return gmcHelp(player, prefix);

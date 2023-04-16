@@ -55,7 +55,7 @@ export function flag(player, check, checkType, hackType, item, stack, debugName,
         player.triggerEvent("paradox:kick");
     }
 }
-/**
+/**h
  * @name banMessage
  * @param {Player} player - The player object
  */

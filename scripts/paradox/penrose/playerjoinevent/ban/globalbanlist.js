@@ -6,7 +6,7 @@ const tickEventCallback = World.events.tick;
 let check = false;
 function banHammerTime(player, callback) {
     try {
-        // Loop until player is detected in the world
+        // Loop until player is detected in the worldk
         player.runCommand(`testfor @s`);
         // Check global ban list and if the player who is joining is on the server then kick them out
         if (banplayer.some((code) => JSON.stringify(code) === JSON.stringify({ name: player.nameTag }))) {

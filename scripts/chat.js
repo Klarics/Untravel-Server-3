@@ -6,13 +6,17 @@ import { ctl } from "./Commands/moderator/ctl";
 import { spawn } from "./Commands/spawn.js";
 import { vault } from "./Commands/vault.js";
 import { gmc } from "./Commands/moderator/gmc.js";
+import { ban } from "./Commands/moderator/ban";
+import { unban } from "./Commands/moderator/unban";
 
 
  const commandDefinitions = Object.setPrototypeOf({
      ctl: ctl,
      gmc: gmc,
      vault: vault,
-     spawn: spawn
+     spawn: spawn,
+     ban: ban,
+     unban: unban
  }, null)
 
 

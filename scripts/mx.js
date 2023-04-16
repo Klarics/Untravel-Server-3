@@ -34,9 +34,4 @@ world.events.beforeItemUse.subscribe((data) => {
 });
 
 // Chat
-
-
-
-
-
 ChatFilter()

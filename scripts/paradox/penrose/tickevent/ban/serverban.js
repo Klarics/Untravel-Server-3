@@ -1,7 +1,7 @@
-import { world, EntityQueryOptions } from "mojang-minecraft";
-import { banMessage, sendMsg, sendMsgToPlayer } from "../../../util.js";
-import { setTickInterval } from "../../../misc/scheduling.js";
-import { queueUnban } from "../../../commands/moderation/unban.js";
+import { world, EntityQueryOptions } from "@minecraft/server";
+import { banMessage, sendMsg, sendMsgToPlayer } from "../../../utilMx.js";
+//import { setTickInterval } from "../../../misc/scheduling.js";
+//import { queueUnban } from "../../../commands/moderation/unban.js";
 const World = world;
 function serverban() {
     let filter = new EntityQueryOptions();
@@ -9,7 +9,7 @@ function serverban() {
     // run as each player
     for (let player of World.getPlayers(filter)) {
         if (queueUnban.has(player.nameTag)) {
-            // Remove tag
+            // Remove tag.
             player.removeTag("isBanned");
             let tags = player.getTags();
             // This removes old ban stuff
