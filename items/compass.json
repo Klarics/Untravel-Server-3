@@ -1,0 +1,18 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "test:compass",
+      "category": "nature"
+    },
+    "components": {
+      "minecraft:icon": {
+        "texture": "test_compass"
+      },
+      "minecraft:on_use": {
+        "on_use": {}
+      }
+    },
+    "events": {}
+  }
+}

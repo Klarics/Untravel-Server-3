@@ -1,6 +1,6 @@
 /* eslint no-var: "off"*/
 import { world } from "@minecraft/server";
-import { prefix, sendMsg, sendMsgToPlayer } from "../../utilMx.js";
+import { prefix, sendMsg, sendMsgToPlayer } from "../../utilsMx.js";
 
 function banHelp(player, prefix) {
     // let commandStatus;

@@ -1,4 +1,4 @@
-import { prefix, sendMsg, sendMsgToPlayer } from "../../utilMx.js";
+import { prefix, sendMsg, sendMsgToPlayer } from "../../utilsMx.js";
 
 export const queueUnban = new Set();
 
