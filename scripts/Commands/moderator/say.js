@@ -22,7 +22,7 @@ import { sayOption, sayJust } from "../../custom-ui/sayUi.js";
          `          ${prefix}say help`,
      ]);
  }
-export function sayOtp(message, args) {
+export function say(message, args) {
     message.cancel = true;
     let player = message.sender;
     let argCheck = args[0];

@@ -8,6 +8,7 @@ import { vault } from "./Commands/vault.js";
 import { gmc } from "./Commands/moderator/gmc.js";
 import { ban } from "./Commands/moderator/ban";
 import { unban } from "./Commands/moderator/unban";
+import { say } from "./Commands/moderator/say";
 
 
  const commandDefinitions = Object.setPrototypeOf({
@@ -16,7 +17,8 @@ import { unban } from "./Commands/moderator/unban";
      vault: vault,
      spawn: spawn,
      ban: ban,
-     unban: unban
+     unban: unban,
+     say: say
  }, null)
 
 
@@ -45,17 +47,6 @@ export const ChatFilter = () => {
         console.warn(`${new Date()} | "${player.name}" used the command: ${prefix}${commandName}  ${args} and${args.join(" ")}`);
 
 
-        switch (eventData.message) {
-          case "-gmc":
-            //player.runCommandAsync("gamemode c");
-            
-            break;
-          case "-gms":
-            player.runCommandAsync("gamemode s");
-            break;
-          default:
-            break;
-        }
       }
       let message = eventData.message;
       let playertalk = eventData.sender;

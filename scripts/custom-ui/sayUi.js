@@ -12,9 +12,6 @@ export function sayOption(playerid, member, args) {
   gui.button("§cNo")
   gui.show(member).then((result) => {
     if (result.canceled) {
-      //member.runCommandAsync(
-      //  `tellraw @s {"rawtext":[{"text":"§eNo puedes ignorar me para siempre"}]}`
-      //);
       sendMsgToPlayer(member, `§eNo puedes ignorar me para siempre.`)
       sendMsgToPlayer(playerid, `§r§b■§d§lUntravel§eMx§b■§r ${member} §bignoró tu pregunta .`)
     }

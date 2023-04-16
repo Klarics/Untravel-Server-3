@@ -24,8 +24,9 @@ export function gmc(message, args) {
     message.cancel = true;
     let player = message.sender;
     let argCheck = args[0];
+    const commandName = args.shift().toLowerCase();
     if (!player.hasTag('staffstatus') && !player.hasTag('Adminer')) {
-        return sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r§c You need to be §eServer-Op§r§c to use this command.`);
+        return sendMsgToPlayer(player, `§cComando desconocido: §r§l${commandName}§r§c. Revisa que el comando exista y que tengas permiso para usarlo.`);
     }
 
     
@@ -33,7 +34,7 @@ export function gmc(message, args) {
          return gmcHelp(player, prefix);
      }
     else if ((player.hasTag('staffstatus') && player.hasTag('Adminer')) && !player.hasTag('gmc')) {
-        sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r§a Gamemode §bOn!`);
+        sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r§a Gamemode §bOn!${commandName}`);
         sendMsg("@a[tag=Adminer]", `§r§b■§d§lUntravel§eMx§b■§r ${player.nameTag}§a is on gamemode Creative .`);
         player.runCommandAsync(`gamemode c @s`)
         player.runCommandAsync(`effect @s[tag=Adminer] night_vision 100000 5 true`)

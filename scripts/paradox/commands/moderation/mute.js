@@ -1,19 +1,18 @@
 /* eslint no-var: "off"*/
-import { world } from "mojang-minecraft";
-import config from "../../data/config.js";
-import { crypto, getPrefix, sendMsg, sendMsgToPlayer } from "../../util.js";
-const World = world;
+import { world } from "@minecraft/server";
+import { prefix, sendMsg, sendMsgToPlayer } from "../../utilMx.js";
+
 function muteHelp(player, prefix) {
-    let commandStatus;
-    if (!config.customcommands.mute) {
-        commandStatus = "§6[§4DISABLED§6]§r";
-    }
-    else {
-        commandStatus = "§6[§aENABLED§6]§r";
-    }
+    //let commandStatus;
+    //if (!config.customcommands.mute) {
+    //     commandStatus = "§6[§4DISABLED§6]§r";
+    // }
+    // else {
+    //     commandStatus = "§6[§aENABLED§6]§r";
+    // }
     return sendMsgToPlayer(player, [
         `\n§4[§6Command§4]§r: mute`,
-        `§4[§6Status§4]§r: ${commandStatus}`,
+    //    `§4[§6Status§4]§r: ${commandStatus}`,
         `§4[§6Usage§4]§r: mute [optional]`,
         `§4[§6Optional§4]§r: mute, reason, help`,
         `§4[§6Description§4]§r: Mutes the specified user and optionally gives reason.`,
@@ -23,11 +22,7 @@ function muteHelp(player, prefix) {
         `    ${prefix}mute help`,
     ]);
 }
-/**
- * @name mute
- * @param {BeforeChatEvent} message - Message object
- * @param {string[]} args - Additional arguments provided (optional).
- */
+
 export function mute(message, args) {
     // validate that required params are defined
     if (!message) {
@@ -36,16 +31,8 @@ export function mute(message, args) {
     message.cancel = true;
     let player = message.sender;
     let reason = args.slice(1).join(" ") || "No reason specified";
-    // Check for hash/salt and validate password
-    let hash = player.getDynamicProperty("hash");
-    let salt = player.getDynamicProperty("salt");
-    let encode;
-    try {
-        encode = crypto(salt, config.modules.encryption.password);
-    }
-    catch (error) { }
     // make sure the user has permissions to run the command
-    if (hash === undefined || encode !== hash) {
+    if (!player.hasTag('staffstatus') && !player.hasTag('Moderator')) {
         return sendMsgToPlayer(player, `§r§4[§6Paradox§4]§r You need to be Paradox-Opped to use this command.`);
     }
     // Check for custom prefix
@@ -61,7 +48,7 @@ export function mute(message, args) {
     }
     // try to find the player requested
     let member;
-    for (let pl of World.getPlayers()) {
+    for (let pl of world.getPlayers()) {
         if (pl.nameTag.toLowerCase().includes(args[0].toLowerCase().replace(/"|\\|@/g, ""))) {
             member = pl;
         }
@@ -69,14 +56,8 @@ export function mute(message, args) {
     if (!member) {
         return sendMsgToPlayer(player, `§r§4[§6Paradox§4]§r Couldnt find that player!`);
     }
-    // Check for hash/salt and validate password for members
-    let memberHash = member.getDynamicProperty("hash");
-    let memberSalt = member.getDynamicProperty("salt");
-    let memberEncode;
-    try {
-        memberEncode = crypto(memberSalt, config.modules.encryption.password);
-    }
-    catch (error) { }
+    
+    
     // make sure they dont mute themselves
     if (member === player) {
         return sendMsgToPlayer(player, `§r§4[§6Paradox§4]§r You cannot mute yourself.`);
