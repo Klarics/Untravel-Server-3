@@ -16,23 +16,20 @@ import { sendMsg, sendMsgToPlayer, prefix } from "../../utilsMx.js";
          `§b~§aOptional§b~§r: help`,
          `§b~§aDescription§b~§r: Grants permission to use Creative features.`,
          `§b~§aExamples§b~§r:`,
-         `          ${prefix} ${player.name}`,
-         `          ${prefix} help`,
+         `          ${prefix}gmc`,
+         `          ${prefix}gmc help`,
      ]);
  }
 export function gmc(message, args) {
     message.cancel = true;
     let player = message.sender;
     let argCheck = args[0];
-    //let prefix = getPrefix(player);
-    
     if (!player.hasTag('staffstatus') && !player.hasTag('Adminer')) {
         return sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r§c You need to be §eServer-Op§r§c to use this command.`);
     }
 
     
     if ((argCheck && args[0].toLowerCase() === "help")) {
-    //    sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r§a This funtion is not aveable!`);
          return gmcHelp(player, prefix);
      }
     else if ((player.hasTag('staffstatus') && player.hasTag('Adminer')) && !player.hasTag('gmc')) {
@@ -53,13 +50,4 @@ export function gmc(message, args) {
         
         return;
     }
-    
-     
-    // if (!args.length) {
-    //     return gmcHelp(player, prefix);
-    // }
-//     sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r§c Gamemode C On!`);
-//     sendMsg("@a[tag=Adminer]", `§r§b■§d§lUntravel§eMx§b■§r§c ${player.nameTag}§e is on gamemode C.`);
-//     player.runCommand(`gamemode c @s`)
-//     player.addTag("gmc");
 }
