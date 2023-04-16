@@ -1,13 +1,13 @@
 import { world, EntityQueryOptions } from "@minecraft/server";
 import { banMessage, sendMsg, sendMsgToPlayer } from "../../../utilMx.js";
-//import { setTickInterval } from "../../../misc/scheduling.js";
-//import { queueUnban } from "../../../commands/moderation/unban.js";
-const World = world;
+import { setTickInterval } from "../../../misc/scheduling.js";
+import { queueUnban } from "../../../Commands/moderation/unban.js";
+
 function serverban() {
     let filter = new EntityQueryOptions();
     filter.tags = ["isBanned"];
     // run as each player
-    for (let player of World.getPlayers(filter)) {
+    for (let player of world.getPlayers(filter)) {
         if (queueUnban.has(player.nameTag)) {
             // Remove tag.
             player.removeTag("isBanned");
@@ -24,8 +24,8 @@ function serverban() {
             // Remove player from queue
             queueUnban.delete(player.nameTag);
             // Let staff and player know they are unbanned
-            sendMsgToPlayer(player, `§r§4[§bUntravel§eMx§4]§r You have been unbanned.`);
-            sendMsg(`@a[tag=paradoxOpped]`, `§r§4[§bUntravel§eMx§4]§r ${player.nameTag} has been unbanned.`);
+            sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r§b Has sido desbaneado .`);
+            sendMsg(`@a[tag=staffstatus]`, `§r§b■§d§lUntravel§eMx§b■§r ${player.nameTag} §b Ha sido desbaneado.`);
             continue;
         }
         // Ban message

@@ -4,7 +4,7 @@ export const queueUnban = new Set();
 
 function listQueue(queue, player) {
     if (queue) {
-        return sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r ${player.nameTag}§b esta en fila para ser desbaneado`);
+        return sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r ${player.nameTag}§b ya esta en fila para ser desbaneado`);
     }
 }
 
