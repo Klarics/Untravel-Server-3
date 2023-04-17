@@ -1,5 +1,5 @@
 import { ActionFormData, MessageFormData } from "@minecraft/server-ui";
-import { sendMsgToPlayer } from "../utilsMx";
+import { sendMsgToPlayer, tagTitle } from "../utilsMx";
 
 export function sayOption(playerid, member, args) { // funcion(object,object, string, string)
   const dus = new ActionFormData();
@@ -42,6 +42,25 @@ export function sayJust(playerid, member, args) {
     }
      if (result.selection === 0) {
        sendMsgToPlayer(playerid, `§r§b■§d§lUntravel§eMx§b■§r ${member.nameTag} §bYa vio tu mensaje .`)
+     }
+  });
+}
+
+
+export function sayNothing(playerid, member, titleTag) {
+  
+  const fus = new ActionFormData();
+  fus.title(`★━━━━━━━━<§c???§r>━━━━━━━━★`);
+  fus.body(
+    `\n\n${titleTag} te observa.\n\n\n\n`
+  );
+  fus.button("･。ﾟﾟ･:ﾟ*:･｡ﾟ☆ｏＯ◯Ｏｏ☆ﾟ･:ﾟ*:･｡ﾟ･。ﾟ");
+  fus.show(member).then((result) => {
+    if (result.canceled) {
+      sendMsgToPlayer(playerid, `§r§b■§d§lUntravel§eMx§b■§r ${member.nameTag} §bTalvez vio tu mensaje o no le importa.`)
+    }
+     if (result.selection === 0) {
+       sendMsgToPlayer(playerid, `§r§b■§d§lUntravel§eMx§b■§r ${member.nameTag} §bSabe que lo observas.`)
      }
   });
 }

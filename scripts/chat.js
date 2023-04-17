@@ -63,7 +63,7 @@ export const ChatFilter = () => {
       for (const tag of tags) {
         if (tag.startsWith("Rank:")) {
           rank = tag.replace("Rank:", "");
-          rank = rank.replaceAll("--", "§r§7][§r");
+          rank = rank.replaceAll("--", "§r§o§7][§r");
         }
       }
       if (!rank) {
