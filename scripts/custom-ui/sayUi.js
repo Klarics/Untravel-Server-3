@@ -1,9 +1,9 @@
 import { ActionFormData, MessageFormData } from "@minecraft/server-ui";
 import { sendMsgToPlayer, tagTitle } from "../utilsMx";
 
-export function sayOption(playerid, member, args) { // funcion(object,object, string, string)
+export function sayOption(playerid, member, args, titleTag) { // funcion(object,object, string, string)
   const dus = new ActionFormData();
-  dus.title(`★━━━━━━━━<§6${playerid.nameTag}§r>━━━━━━━━★`);
+  dus.title(`★<§6${titleTag}§r>★`);
   dus.body(
     `\n\n${args}\n\n\n\n`
   );
@@ -29,9 +29,9 @@ export function sayOption(playerid, member, args) { // funcion(object,object, st
 }
 
 
-export function sayJust(playerid, member, args) {
+export function sayJust(playerid, member, args,titleTag) {
   const fus = new ActionFormData();
-  fus.title(`★━━━━━━━━<§6${playerid.nameTag}§r>━━━━━━━━★`);
+  fus.title(`★<§6${titleTag}§r>★`);
   fus.body(
     `\n\n${args}\n\n\n\n`
   );
@@ -41,7 +41,7 @@ export function sayJust(playerid, member, args) {
       sendMsgToPlayer(playerid, `§r§b■§d§lUntravel§eMx§b■§r ${member.nameTag} §bTalvez vio tu mensaje .`)
     }
      if (result.selection === 0) {
-       sendMsgToPlayer(playerid, `§r§b■§d§lUntravel§eMx§b■§r ${member.nameTag} §bYa vio tu mensaje .`)
+       sendMsgToPlayer(playerid, `§r§b■§d§lUntravel§eMx§b■§r ${member.nameTag} §bYa vio tu mensaje.`)
      }
   });
 }
@@ -61,6 +61,44 @@ export function sayNothing(playerid, member, titleTag) {
     }
      if (result.selection === 0) {
        sendMsgToPlayer(playerid, `§r§b■§d§lUntravel§eMx§b■§r ${member.nameTag} §bSabe que lo observas.`)
+     }
+  });
+}
+
+
+export function sayLike(playerid, member, titleTag, args) {
+  
+  const fus = new ActionFormData();
+  fus.title(`★━━━━━━━━<§c???§r>━━━━━━━━★`);
+  fus.body(
+    `\n\nA ${titleTag} le gusta ${args}.\n\n\n\n`
+  );
+  fus.button("･。ﾟﾟ･:ﾟ*:･｡ﾟ☆ｏＯ◯Ｏｏ☆ﾟ･:ﾟ*:･｡ﾟ･。ﾟ");
+  fus.show(member).then((result) => {
+    if (result.canceled) {
+      sendMsgToPlayer(playerid, `§r§b■§d§lUntravel§eMx§b■§r ${member.nameTag} §bTalvez no vio tu mensaje o no le importa.`)
+    }
+     if (result.selection === 0) {
+       sendMsgToPlayer(playerid, `§r§b■§d§lUntravel§eMx§b■§r ${member.nameTag} §bYa vio tu mensaje`)
+     }
+  });
+}
+
+
+export function sayConfution(playerid, member, titleTag, args) {
+  
+  const fus = new ActionFormData();
+  fus.title(`★━━━━━━━━<§c???§r>━━━━━━━━★`);
+  fus.body(
+    `\n\nA ${titleTag} no entiende ${args}.\n\n\n\n`
+  );
+  fus.button("･。ﾟﾟ･:ﾟ*:･｡ﾟ☆ｏＯ◯Ｏｏ☆ﾟ･:ﾟ*:･｡ﾟ･。ﾟ");
+  fus.show(member).then((result) => {
+    if (result.canceled) {
+      sendMsgToPlayer(playerid, `§r§b■§d§lUntravel§eMx§b■§r ${member.nameTag} §b§bTalvez no vio tu mensaje o no le importa.`)
+    }
+     if (result.selection === 0) {
+       sendMsgToPlayer(playerid, `§r§b■§d§lUntravel§eMx§b■§r ${member.nameTag} §bYa vio tu mensaje.`)
      }
   });
 }

@@ -1,20 +1,20 @@
 execute @a[tag=Adminer,tag=!staffstatus] ~ ~ ~ tag @s add staffstatus
 #Adminer
-execute @a[tag=!Adminer] ~ ~ ~ tag @s remove Rank:§l§6★★★★★★★
+execute @a[tag=!Adminer] ~ ~ ~ tag @s remove Rank:§l§b★★★★★★★
 
-execute @a[tag=Adminer] ~ ~ ~ tag @s add Rank:§l§6★★★★★★★
-execute @a[tag=Adminer,tag=Admin] ~ ~ ~ tag @s remove Rank:§l§6★★★★★★
-execute @a[tag=!Adminer,tag=Admin] ~ ~ ~ tag @s remove Rank:§l§6★★★★★★★
-execute @a[tag=!Adminer,tag=Admin] ~ ~ ~ tag @s add Rank:§l§6★★★★★★
-
-
-execute @a[tag=Admin,tag=Moderator] ~ ~ ~ tag @s remove Rank:§l§6★★★★★
-execute @a[tag=!Admin,tag=Moderator] ~ ~ ~ tag @s remove Rank:§l§6★★★★★★
-execute @a[tag=!Admin,tag=Moderator] ~ ~ ~ tag @s add Rank:§l§6★★★★★
+execute @a[tag=Adminer] ~ ~ ~ tag @s add Rank:§l§b★★★★★★★
+execute @a[tag=Adminer,tag=Admin] ~ ~ ~ tag @s remove Rank:§l§b★★★★★★
+execute @a[tag=!Adminer,tag=Admin] ~ ~ ~ tag @s remove Rank:§l§b★★★★★★★
+execute @a[tag=!Adminer,tag=Admin] ~ ~ ~ tag @s add Rank:§l§b★★★★★★
 
 
-execute @a[tag=Moderator,tag=Helper] ~ ~ ~ tag @s remove Rank:§l§6★★★★
-execute @a[tag=!Moderator,tag=Helper] ~ ~ ~ tag @s add Rank:§l§6★★★★
+execute @a[tag=Admin,tag=Moderator] ~ ~ ~ tag @s remove Rank:§l§b★★★★★
+execute @a[tag=!Admin,tag=Moderator] ~ ~ ~ tag @s remove Rank:§l§b★★★★★★
+execute @a[tag=!Admin,tag=Moderator] ~ ~ ~ tag @s add Rank:§l§b★★★★★
+
+
+execute @a[tag=Moderator,tag=Helper] ~ ~ ~ tag @s remove Rank:§l§b★★★★
+execute @a[tag=!Moderator,tag=Helper] ~ ~ ~ tag @s add Rank:§l§b★★★★
 
 
 execute @a[tag=Helper,tag=Tribulador] ~ ~ ~ tag @s remove Rank:§l§b★★★
