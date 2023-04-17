@@ -1,21 +1,32 @@
-#Adminer
 execute @a[tag=Adminer,tag=!staffstatus] ~ ~ ~ tag @s add staffstatus
-execute @a[tag=Adminer] ~ ~ ~ tag @s add Rank:§l§6Admin
-execute @a[tag=Adminer,tag=Admin] ~ ~ ~ tag @s remove Rank:§l§bAdmin
-#Admin
-execute @a[tag=Admin,tag=!Adminer] ~ ~ ~ tag @s add Rank:§l§bAdmin
-execute @a[tag=Admin,tag=!Moderator] ~ ~ ~ tag @s add Moderator
-execute @a[tag=Admin,tag=Moderator] ~ ~ ~ tag @s remove Rank:§l§8Moderator
+#Adminer
+execute @a[tag=!Adminer] ~ ~ ~ tag @s remove Rank:§l§6★★★★★★★
 
-#Moderator
-execute @a[tag=Moderator,tag=!Admin] ~ ~ ~ tag @s add Rank:§l§8Moderator
-execute @a[tag=Moderator,tag=!Helper] ~ ~ ~ tag @s add Helper
-execute @a[tag=Moderator,tag=Helper] ~ ~ ~ tag @s remove Rank:§l§eHelper
+execute @a[tag=Adminer] ~ ~ ~ tag @s add Rank:§l§6★★★★★★★
+execute @a[tag=Adminer,tag=Admin] ~ ~ ~ tag @s remove Rank:§l§6★★★★★★
+execute @a[tag=!Adminer,tag=Admin] ~ ~ ~ tag @s remove Rank:§l§6★★★★★★★
+execute @a[tag=!Adminer,tag=Admin] ~ ~ ~ tag @s add Rank:§l§6★★★★★★
 
-#helper
-execute @a[tag=Helper,tag=!Moderator] ~ ~ ~ tag @s add Rank:§l§eHelper
-execute @a[tag=Helper,tag=!Ambassador] ~ ~ ~ tag @s add Ambassador
-execute @a[tag=Helper,tag=Ambassador] ~ ~ ~ tag @s remove Rank:§l§aAmbassador
 
-#Ambassador
-execute @a[tag=Ambassador,tag=!Helper] ~ ~ ~ tag @s add Rank:§l§aAmbassador
+execute @a[tag=Admin,tag=Moderator] ~ ~ ~ tag @s remove Rank:§l§6★★★★★
+execute @a[tag=!Admin,tag=Moderator] ~ ~ ~ tag @s remove Rank:§l§6★★★★★★
+execute @a[tag=!Admin,tag=Moderator] ~ ~ ~ tag @s add Rank:§l§6★★★★★
+
+
+execute @a[tag=Moderator,tag=Helper] ~ ~ ~ tag @s remove Rank:§l§6★★★★
+execute @a[tag=!Moderator,tag=Helper] ~ ~ ~ tag @s add Rank:§l§6★★★★
+
+
+execute @a[tag=Helper,tag=Tribulador] ~ ~ ~ tag @s remove Rank:§l§b★★★
+execute @a[tag=!Helper,tag=Tribulador] ~ ~ ~ tag @s add Rank:§l§b★★★
+execute @a[tag=Tribulador,tag=staffstatus] ~ ~ ~ tag @s add Rank:§l§b★★★
+execute @a[tag=Tribulador,tag=!staffstatus] ~ ~ ~ tag @s remove Rank:§l§b★★★
+
+#execute @a[tag=Admin,tag=!Moderator,tag=staffstatus]
+execute @a[tag=Admin,tag=!Moderator,tag=staffstatus] ~ ~ ~ tag @s add Moderator
+execute @a[tag=Moderator,tag=!Helper,tag=staffstatus] ~ ~ ~ tag @s add Helper
+execute @a[tag=Helper,tag=!Tribulador,tag=staffstatus] ~ ~ ~ tag @s add Tribulador
+
+execute @a[tag=Admin,tag=!Moderator,tag=!staffstatus] ~ ~ ~ tag @s remove Moderator
+execute @a[tag=Moderator,tag=!Helper,tag=!staffstatus] ~ ~ ~ tag @s remove Helper
+execute @a[tag=Helper,tag=!Tribulador,tag=!staffstatus] ~ ~ ~ tag @s remove Tribulador
