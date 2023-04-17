@@ -41,9 +41,9 @@ export const ChatFilter = () => {
         const commandName = args.shift().toLowerCase();
         if (!(commandName in commandDefinitions)) {
           sendMsgToPlayer(player, `§cComando desconocido: §r§l${commandName}§r§c. Revisa que el comando exista y que tengas permiso para usarlo.`);
-          return (message.cancel = true);
+          return message.cancel = true;
       }
-        commandDefinitions[commandName](eventData, args, eventData.message.slice(prefix.length + commandName.length + 1));
+        commandDefinitions[commandName](eventData, args, eventData.message.slice(prefix.length + commandName.length + 1), commandName);
         console.warn(`${new Date()} | "${player.name}" used the command: ${prefix}${commandName}  ${args} and${args.join(" ")}`);
 
 
@@ -67,12 +67,12 @@ export const ChatFilter = () => {
         }
       }
       if (!rank) {
-        rank = "Member";
+        rank = "★";
       }
       if (!eventData.cancel) {
         sendMsg(
           "@a",
-          `§r§o§7${playertalk.name}§7[§3${rank}§r§7]§o>> §r${message}`
+          `§r§o§7${playertalk.name}§7[§8${rank}§r§o§7]>> §r${message}`
         );
         eventData.cancel = true;
       }

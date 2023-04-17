@@ -35,7 +35,7 @@ function unbanHelp(player, prefix) {
  * @param {BeforeChatEvent} message - Message object
  * @param {string[]} args - Additional arguments provided (optional).
  */
-export function unban(message, args) {
+export function unban(message, args, args2, commandName) {
     // validate that required params are defined
     if (!message) {
         return console.warn(`${new Date()} | ` + "Error: ${message} isnt defined. Did you forget to pass it? (./commands/moderation/unban.js:35)");
@@ -43,8 +43,8 @@ export function unban(message, args) {
     message.cancel = true;
     let player = message.sender;
     // make sure the user has permissions to run the command
-    if (!player.hasTag('staffstatus') && !player.hasTag('Moderator')) {
-        return sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r§c Necesitas ser Administrador para usar este comando.`);
+    if (!player.hasTag('staffstatus') || !player.hasTag('Moderator')) {
+        return sendMsgToPlayer(player, `§cComando desconocido: §r${commandName}§r§c. Revisa que el comando exista y que tengas permiso para usarlo.`);
     }
     // Check for custom prefix
     //let prefix = getPrefix(player);
@@ -64,5 +64,5 @@ export function unban(message, args) {
     // Add player to queue
     let regexp = /["'`]/g;
     queueUnban.add(args.join(" ").replace(regexp, ""));
-    sendMsg("@a[tag=staffstatus]", `§r§b■§d§lUntravel§eMx§b■§r ${args.join(" ").replace(regexp, "")}§b esta en fila de desbaneo!`);
+    sendMsg("@a[tag=staffstatus]", `§c[!]§r ${args.join(" ").replace(regexp, "")}§b esta en fila de desbaneo!`);
 }

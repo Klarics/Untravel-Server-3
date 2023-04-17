@@ -30,7 +30,7 @@ function banHelp(player, prefix) {
  * @param {BeforeChatEvent} message - Message object
  * @param {array} args - Additional arguments provided (optional).
  */
-export function ban(message, args) {
+export function ban(message, args, args2, commandName) {
     // validate that required params are defined
     if (!message) {
         return console.warn(`${new Date()} | ` + "Error: ${message} isnt defined. Did you forget to pass it? ./commands/moderation/ban.js:31)");
@@ -39,8 +39,8 @@ export function ban(message, args) {
     let player = message.sender;
     let reason = args.slice(1).join(" ") || "No reason specified";
     // make sure the user has permissions to run the command
-    if (!player.hasTag('staffstatus') && !player.hasTag('Moderator')) {
-        return sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r§c Necesitas ser Administrador para usar este comando.`);
+    if (!player.hasTag('staffstatus') || !player.hasTag('Moderator')) {
+        return sendMsgToPlayer(player, `§cComando desconocido: §r${commandName}§r§c. Revisa que el comando exista y que tengas permiso para usarlo.`);
     }
     // Check for custom prefix
     //let prefix = getPrefix(player);
@@ -66,7 +66,7 @@ export function ban(message, args) {
     }
     // make sure they dont ban themselves
     if (member === player) {
-        return sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r§b No te puedes banear a ti mismo.`);
+        return sendMsgToPlayer(player, `§rcb■§d§lUntravel§eMx§b■§r§b No te puedes banear a ti mismo.`);
     }
     if (member.hasTag("Adminer")) {
         return sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r§c No pude banaear a ese jugador! D: Error: ${error}`);
@@ -79,5 +79,5 @@ export function ban(message, args) {
     catch (error) {
         return sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r§c No pude banaear a ese jugador! D: Error: ${error}`);
     }
-    return sendMsg("@a[tag=staffstatus]", `§r§b■§d§lUntravel§eMx§b■§r ${player.nameTag}§d ha baneado a >§r ${member.nameTag}§e. Reason: §d${reason}`);
+    return sendMsg("@a[tag=staffstatus]", `§c[!]§r ${player.nameTag}§d ha baneado a >§r ${member.nameTag}§e. Reason: §d${reason}`);
 }

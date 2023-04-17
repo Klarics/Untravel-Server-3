@@ -9,7 +9,7 @@ system.runInterval(() => {
   // world.sendMessage("Hello World");   // funciona 1.19.73****** como un say
   //or run a command in overworld dimension
   //using native API methods (such as world.sendMessage) are recommended whenever possible.
-  overworld.runCommandAsync("function server/active"); //funciona 1.19.73 pero dice motor de script
+//  overworld.runCommandAsync("function server/active"); //funciona 1.19.73 pero dice motor de script
 });
 
 // Item UI
