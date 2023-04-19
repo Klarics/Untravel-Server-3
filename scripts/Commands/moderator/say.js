@@ -5,6 +5,7 @@ import {
   sayJust,
   sayNothing,
   sayLike,
+  sayConfution,
 } from "../../custom-ui/sayUi.js";
 
 function sayHelp(player, prefix) {
@@ -28,6 +29,9 @@ function sayHelp(player, prefix) {
     `          ${prefix}say ${player.name} like tu pvp // A <titulo> le gusta tu pvp`,
     `          ${prefix}say ${player.name} like tus hazañas // A <titulo> le gusta tus azañas`,
 
+    `          ${prefix}say ${player.name} ? tus acciones // <titulo> no entiende tus acciones`,
+    `          ${prefix}say ${player.name} ? // A <titulo> no entiende tus desiciones{se pondra esto si no hay mensaje}`,
+
     `          ${prefix}say help`,
   ]);
 }
@@ -36,7 +40,7 @@ export function say(message, args, args2, commandName) {
   let player = message.sender;
   let argCheck = args[0]; // nametag
   let mensaje = args.slice(1).join(" ") || "..."; // segundo string o mensaje
-  let mensaje2 = args.slice(2).join(" ") || "";
+  let mensaje2 = args.slice(2).join(" ") || "tus desiciones";
   let member;
   let tags = player.getTags();
   let titleOne = "Un Dios Desconocido";
@@ -70,9 +74,12 @@ export function say(message, args, args2, commandName) {
       `§r§b■§d§lUntravel§eMx§b■§r§b Jugador no encontrado!`
     );
   }
-   if (member === player) {
-       return sendMsgToPlayer(player, `§r§b■§d§lUntravel§eMx§b■§r§b No te puedes mencionar a ti mismo.`);
-   }
+  if (member === player) {
+    return sendMsgToPlayer(
+      player,
+      `§r§b■§d§lUntravel§eMx§b■§r§b No te puedes mencionar a ti mismo.`
+    );
+  }
 
   for (const tag of tags) {
     if (tag.startsWith("Title:")) {
@@ -83,8 +90,7 @@ export function say(message, args, args2, commandName) {
   let titleName = `§7<§3${titleOne}§7>§r §7${player.name}§r`;
   let titleTag = `§7<§3${titleOne}§7>§r`;
 
-  
-// verifica si es pregunta
+  // verifica si es pregunta
   if (
     player.hasTag("staffstatus") &&
     player.hasTag("OlimpO") &&
@@ -97,22 +103,44 @@ export function say(message, args, args2, commandName) {
     );
     return;
   }
-//verifica si es like
+  //verifica si es like
   if (
     player.hasTag("staffstatus") &&
     player.hasTag("OlimpO") &&
     mensaje.startsWith("like")
   ) {
+    if (!mensaje2.startsWith("tus desiciones")) {
+      let titleName = `§7<§3${titleOne}§7>§r §7${player.name}§r`;
+      let titleTag = `§7<§3${titleOne}§7>§r`;
+      sayLike(player, member, titleTag, mensaje2); // funcion(object,object, string)
+      sendMsg(
+        "@a[tag=Adminer]",
+        `§c[!]§r ${player.nameTag}§a dio like: §r${member.nameTag}§a mensaje: §r${mensaje2}.`
+      );
+    } else {
+      return sendMsgToPlayer(
+        player,
+        `§r§b■§d§lUntravel§eMx§b■§r§b No debes dejar el like sin mensaje!`
+      );
+    }
+
+    return;
+  }
+  if (
+    player.hasTag("staffstatus") &&
+    player.hasTag("OlimpO") &&
+    mensaje.startsWith("?")
+  ) {
     let titleName = `§7<§3${titleOne}§7>§r §7${player.name}§r`;
     let titleTag = `§7<§3${titleOne}§7>§r`;
-    sayLike(player, member, titleTag, mensaje2); // funcion(object,object, string)
+    sayConfution(player, member, titleTag, mensaje2); // funcion(object,object, string)
     sendMsg(
       "@a[tag=Adminer]",
-      `§c[!]§r ${player.nameTag}§a dio like: §r${member.nameTag}§a mensaje: §r${mensaje2}.`
+      `§c[!]§r ${player.nameTag}§a esta desconcertado con: §r${member.nameTag}§a. pues le dijo: §r${mensaje2}.`
     );
     return;
   }
-//verifica si esta vacio y solo envia te observa
+  //verifica si esta vacio y solo envia te observa
   if (
     player.hasTag("staffstatus") &&
     player.hasTag("OlimpO") &&

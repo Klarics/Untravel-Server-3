@@ -90,7 +90,7 @@ export function sayConfution(playerid, member, titleTag, args) {
   const fus = new ActionFormData();
   fus.title(`★━━━━━━━━<§c???§r>━━━━━━━━★`);
   fus.body(
-    `\n\nA ${titleTag} no entiende ${args}.\n\n\n\n`
+    `\n\n${titleTag} no entiende ${args}.\n\n\n\n`
   );
   fus.button("･。ﾟﾟ･:ﾟ*:･｡ﾟ☆ｏＯ◯Ｏｏ☆ﾟ･:ﾟ*:･｡ﾟ･。ﾟ");
   fus.show(member).then((result) => {
