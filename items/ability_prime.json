@@ -1,0 +1,23 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+      "description": {
+        "identifier": "mx:pasiva_001",
+        "category": "nature"
+      },
+      "components": {
+        "minecraft:icon": {
+          "texture": "stick"
+        },
+        "minecraft:display_name": {
+          "value": "§bpasiva"
+        },
+        "minecraft:max_stack_size": 1,
+        "minecraft:on_use": {
+          "on_use": {}
+        }
+      },
+      "events": {}
+    }
+  }
+  
