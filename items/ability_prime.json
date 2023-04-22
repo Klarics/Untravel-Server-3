@@ -3,7 +3,7 @@
     "minecraft:item": {
       "description": {
         "identifier": "mx:pasiva_001",
-        "category": "nature"
+        "category": "Items"
       },
       "components": {
         "minecraft:icon": {

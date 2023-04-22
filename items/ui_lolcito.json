@@ -3,7 +3,7 @@
   "minecraft:item": {
     "description": {
       "identifier": "mx:lolcito",
-      "category": "nature"
+      "category": "Items"
     },
     "components": {
       "minecraft:icon": {

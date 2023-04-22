@@ -3,7 +3,7 @@
   "minecraft:item": {
     "description": {
       "identifier": "mx:apple",
-      "category": "Nature"
+      "category": "Items"
     },
     "components": {
       "minecraft:icon": {
