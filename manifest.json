@@ -58,14 +58,6 @@
 		{
 			"module_name": "@minecraft/server-ui",
 			"version": "1.0.0-beta"
-		},
-		{
-			"uuid": "173262f4-8aa2-4c48-aec6-71721a0702bb",
-			"version": [
-				1,
-				0,
-				0
-			]
 		}
 	]
 }

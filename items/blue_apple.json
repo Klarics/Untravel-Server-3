@@ -7,7 +7,7 @@
     },
     "components": {
       "minecraft:icon": {
-        "texture": "blue_apple"
+        "texture": "apple"
       },
       "minecraft:display_name": {
         "value": "§bManzana de awa"

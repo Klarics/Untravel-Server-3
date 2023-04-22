@@ -7,7 +7,7 @@
     },
     "components": {
       "minecraft:icon": {
-        "texture": "test_compass"
+        "texture": "stick"
       },
       "minecraft:on_use": {
         "on_use": {}
