@@ -21,8 +21,8 @@ system.runInterval(() => {
   } 
   ticksPaladin++
   if (ticksPaladin % 1200 === 0) {
-    //paladin.runCommandAsync(`particle mx:bless ~ ~ ~`)
-    paladin.runCommandAsync(`playanimation @s animation.armor_stand.honor_pose m 3`)
+    paladin.runCommandAsync(`particle mx:bless ~ ~-2 ~`)
+    paladin.runCommandAsync(`playanimation @s animation.armor_stand.entertain_pose m 3`)
     paladin.runCommandAsync(`effect @a regeneration 1 3`)
     ticksPaladin = 0
         
