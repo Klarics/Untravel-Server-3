@@ -7,5 +7,5 @@ export function spawn(message) {
         return sendMsgToPlayer(player, [`§cYou can't leave during a Fight `]);
     }
     sendMsgToPlayer(player, [`>>>§aTeleported to spawn`])
-    player.runCommandAsync(`tp @s @e[type=armor_stand,name=§r§l§o§5Untravel]`)
+    player.runCommandAsync(`tp @s @e[type=npc,tag=§r§l§o§5Untravel]`)
 }

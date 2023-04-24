@@ -7,5 +7,5 @@ export function vault(message) {
         return sendMsgToPlayer(player, [`§cYou can't leave during a Fight `]);
     }
     sendMsgToPlayer(player, [`>>>§aTeleported to Vault`])
-    player.runCommandAsync(`tp @s @e[type=armor_stand,name=§r§r§l§dSave]`)
+    player.runCommandAsync(`tp @s @e[type=npc,tag=§r§r§l§dSave]`)
 }

@@ -5,11 +5,28 @@ import { selectDon } from "./custom-ui/ChoosSkill-UI";
 import { getSkill } from "./utilsMx";
 
 const overworld = world.getDimension("overworld");
+let ticks = 0
+let ticksPaladin = 0
 system.runInterval(() => {
-  // world.sendMessage("Hello World");   // funciona 1.19.73****** como un say
-  //or run a command in overworld dimension
-  //using native API methods (such as world.sendMessage) are recommended whenever possible.
-//  overworld.runCommandAsync("function server/active"); //funciona 1.19.73 pero dice motor de script
+  let paladin
+  ticks++
+  
+  for (let pl of world.getPlayers()) {
+    
+    if (
+      pl.hasTag("paladin_pasive")
+    ) {
+      paladin = pl;
+    }
+  } 
+  ticksPaladin++
+  if (ticksPaladin % 1200 === 0) {
+    //paladin.runCommandAsync(`particle mx:bless ~ ~ ~`)
+    paladin.runCommandAsync(`playanimation @s animation.armor_stand.honor_pose m 3`)
+    paladin.runCommandAsync(`effect @a regeneration 1 3`)
+    ticksPaladin = 0
+        
+  }
 });
 
 // Item UI

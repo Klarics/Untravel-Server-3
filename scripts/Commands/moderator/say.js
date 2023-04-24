@@ -44,7 +44,7 @@ export function say(message, args, args2, commandName) {
   let member;
   let tags = player.getTags();
   let titleOne = "Un Dios Desconocido";
-
+ 
   if (!player.hasTag("staffstatus") || !player.hasTag("OlimpO")) {
     return sendMsgToPlayer(
       player,
