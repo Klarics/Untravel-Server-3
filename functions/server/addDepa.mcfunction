@@ -13,5 +13,6 @@ scoreboard players set @a[name=hectords968] depa 13
 scoreboard players set @a[name=dmo7u7] depa 14
 scoreboard players set @a[name=Deadluis2324] depa 15
 scoreboard players set @a[name="LuffoGG"] depa 22
+scoreboard players set @a[name="Robotito2344"] depa 10
 
 #summon armor_stand ~ ~-1 ~ ... §r§l§o§bColiseo§r
