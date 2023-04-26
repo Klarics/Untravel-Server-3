@@ -5,6 +5,6 @@ scoreboard players add @a _9999 0
 scoreboard players add @a depa 0
 scoreboard players add @a _Death 0
 scoreboard players add @a trash 0
-scoreboard players add @a Dones 0
+scoreboard players add @a clase 0
 scoreboard players add @a time_10 0
 scoreboard players add @a[scores={Dones=2}] ooo6 0

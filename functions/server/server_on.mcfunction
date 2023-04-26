@@ -12,7 +12,7 @@ gamerule sendcommandfeedback false
 gamerule commandblockoutput false
 gamerule  mobgriefing false
 tellraw @a {"rawtext":[{"text":"§bGameRules Activados (§d4§f/§d10§b)!"}]}
-scoreboard objectives add Dones dummy §eGifts
+scoreboard objectives add clase dummy §dClass
 scoreboard objectives add time_00 dummy §l§o§eSeconds
 scoreboard objectives add time_01 dummy §l§o§eMinutes
 scoreboard objectives add time_11 dummy §l§o§eHours

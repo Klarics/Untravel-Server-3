@@ -29,7 +29,7 @@ export const sendMsg = (target, message) => {
   } catch {}
 };
 
-export function getSkill(playerSelect, score) {
+export function getScore(playerSelect, score) {
   return world.scoreboard.getObjective(score).getScore(playerSelect.scoreboard);
 }
 
