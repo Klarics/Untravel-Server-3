@@ -34,7 +34,7 @@ system.runInterval(() => {
 world.events.beforeItemUse.subscribe((data) => {
   const source = data.source;
   const items = data.item;
-  if (items.typeId === "minecraft:dirt" && getScore(source, "clase") == 0) {
+  if (items.typeId === "mx:class" && getScore(source, "clase") == 0) {
     selectClass(source);
   }
   if (

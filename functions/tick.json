@@ -1,5 +1,5 @@
 {
     "values": [
-        "server/add_all", "server/addDepa", "server/addTagStaff", "server/addUtilsGmc", "server/always", "server/clock", "server/coliseo", "server/killsMachina", "server/newMembers", "server/respawn", "server/spawn", "server/vault"
+        "server/add_all", "server/addDepa", "server/addTagStaff", "server/addUtilsGmc", "server/always", "server/clock", "server/coliseo/coliseo", "server/killsMachina", "server/newMembers", "server/respawn", "server/spawn", "server/vault"
     ]
   }
