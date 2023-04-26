@@ -1,1 +1,1 @@
-execute @e[type=armor_stand,name=§r§l§o§bColiseo§r] ~~~ tp @e[r=2,name=!§r§l§o§bColiseo§r] ~ ~ ~-9
+execute @e[type=npc,tag=§r§l§o§bColiseo§r] ~~~ tp @e[r=2,tag=!§r§l§o§bColiseo§r] ~ ~ ~-9

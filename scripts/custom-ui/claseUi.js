@@ -22,22 +22,18 @@ export function selectClass(playerid) {
       playerid.runCommandAsync(
         `tellraw @a {"rawtext":[{"text":"§b${playerid.nameTag} §r§aes ahora §ePaladin"}]}`
       );
-      //itemid.amount -= 1;
     }
     if (result.selection === 1) {
       playerid.runCommandAsync(`scoreboard players set @s clase 2`);
       playerid.runCommandAsync(
         `tellraw @a {"rawtext":[{"text":"§b${playerid.nameTag}§r§a es ahora §3Guarrior"}]}`
       );
-      //itemid.amount -= 1;
     }
     if (result.selection === 2) {
       playerid.runCommandAsync(`scoreboard players set @s clase 3`);
       playerid.runCommandAsync(
         `tellraw @a {"rawtext":[{"text":"§b${playerid.nameTag}§r§a es ahora §4Mago"}]}`
       );
-      playerid.runCommandAsync(`give @s ender_pearl`);
-      //itemid.amount -= 1;
     }
     if (result.selection === 3) {
       playerid.runCommandAsync(`scoreboard players set @s clase 4`);
