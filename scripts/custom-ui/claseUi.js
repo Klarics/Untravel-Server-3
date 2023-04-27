@@ -6,11 +6,11 @@ export function selectClass(playerid) {
   gui.body(
     "\n§aCada clase tiene hasta 4 habilidades que tendras que aprender\nEscoge bien..."
   );
-  gui.button("§ePaladin", "textures/items/totem");
-  gui.button("§3Guarrior", "textures/items/diamond_sword");
-  gui.button("§4Mago", "textures/items/campfire");
-  gui.button("§5Necromancer", "textures/items/rotten_flesh");
-  gui.button("§bArcher", "textures/items/arrow");
+  gui.button("§ePaladin\n§r§7suport", "textures/items/totem");
+  gui.button("§3Warrior\n§r§7tanque", "textures/items/diamond_sword");
+  gui.button("§4Mago\n§r§7daño", "textures/items/campfire");
+  gui.button("§5Necromancer\n§r§7invocador", "textures/items/rotten_flesh");
+  gui.button("§bArcher\n§r§7dps", "textures/items/bow_pulling_2");
   gui.show(playerid).then((result) => {
     if (result.canceled) {
       playerid.runCommandAsync(
@@ -29,10 +29,10 @@ export function selectClass(playerid) {
     if (result.selection === 1) {
       playerid.runCommandAsync(`scoreboard players set @s clase 2`);
       playerid.runCommandAsync(
-        `tellraw @a {"rawtext":[{"text":"§b${playerid.nameTag}§r§a es ahora §3Guarrior"}]}`
+        `tellraw @a {"rawtext":[{"text":"§b${playerid.nameTag}§r§a es ahora §3Warrior"}]}`
       );
       playerid.runCommandAsync(
-        `replaceitem entity @s slot.hotbar 0 mx:guarriorui 1 0 {"minecraft:item_lock":{"mode":"lock_in_slot"},"minecraft:keep_on_death":{}}`
+        `replaceitem entity @s slot.hotbar 0 mx:warriorui 1 0 {"minecraft:item_lock":{"mode":"lock_in_slot"},"minecraft:keep_on_death":{}}`
       );
     }
     if (result.selection === 2) {

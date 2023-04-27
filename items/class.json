@@ -7,7 +7,7 @@
     },
     "components": {
       "minecraft:icon": {
-        "texture": "emerald"
+        "texture": "worldicon"
       },
       "minecraft:display_name": {
         "value": "§dClase\n§r§7Tap me / Right click on me"

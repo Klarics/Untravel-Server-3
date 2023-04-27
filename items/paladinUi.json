@@ -21,7 +21,7 @@
 
       "minecraft:cooldown": {
         "category": "ender_pearl",
-        "duration": 10
+        "duration": 60
       }
     },
     "events": {}

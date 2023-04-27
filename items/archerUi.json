@@ -7,7 +7,7 @@
       },
       "components": {
         "minecraft:icon": {
-          "texture": "arrow"
+          "texture": "bow_pulling_2"
         },
         "minecraft:display_name": {
           "value": "§bArcher"
