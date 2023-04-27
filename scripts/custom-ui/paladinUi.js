@@ -15,10 +15,11 @@ export function paladinClass(playerid) {
     if (result.canceled) {
       playerid.runCommandAsync(`scoreboard players set @s uiCooldown 0 `);
       playerid.runCommandAsync(`tag @s remove uiCooldownTag `);
+      // hay que poner restriccion aqui
     }
 
 
-
+//pondremos filtro para saber si aprendio o no las habilidades
     if (result.selection === 0) {
       playerid.runCommandAsync(
         `replaceitem entity @s slot.hotbar 1 mx:empty_marco 1 0 {"minecraft:item_lock":{"mode":"lock_in_slot"},"minecraft:keep_on_death":{}}`
@@ -46,6 +47,7 @@ export function paladinClass(playerid) {
         `replaceitem entity @s slot.hotbar 3 mx:empty_marco 1 0 {"minecraft:item_lock":{"mode":"lock_in_slot"},"minecraft:keep_on_death":{}}`
       );
       paladinClass(playerid);
+      //se debe ir a la batalla solos si esta seguro que podra pelear asi
     }
 
 

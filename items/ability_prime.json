@@ -2,7 +2,7 @@
     "format_version": "1.16.100",
     "minecraft:item": {
       "description": {
-        "identifier": "mx:pasiva_001",
+        "identifier": "mx:ability_prime",
         "category": "Items"
       },
       "components": {

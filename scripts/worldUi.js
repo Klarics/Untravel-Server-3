@@ -42,7 +42,9 @@ export const itemUi = () => {
 
 
 
-
+    if (items.typeId === "mx:ability_prime" && source.hasTag("Adminer")) {
+      source.runCommandAsync(`scoreboard players set @s clase 0`)
+    }
     // if (
     //   items.typeId === "minecraft:ender_pearl" &&
     //   getScore(source, "Dones") == 2
