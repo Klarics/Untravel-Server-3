@@ -45,6 +45,22 @@ export const itemUi = () => {
     if (items.typeId === "mx:ability_prime" && source.hasTag("Adminer")) {
       source.runCommandAsync(`scoreboard players set @s clase 0`)
     }
+
+
+
+
+    if (items.typeId === "mx:paladin_001" && !source.hasTag("Cooldown_p_1")) {
+      paladinClass(source);
+      source.runCommandAsync(`tag @s add Cooldown_p_1`)
+    }
+
+
+
+
+
+
+
+
     // if (
     //   items.typeId === "minecraft:ender_pearl" &&
     //   getScore(source, "Dones") == 2
