@@ -32,6 +32,25 @@ scoreboard objectives add _Death dummy §l§o§cMuertes
 scoreboard objectives add off dummy §l§o§binactivo
 scoreboard objectives add on dummy §l§o§bactivo
 scoreboard objectives add omega dummy §l§o§cTecutli-Omega
+#
+#
+scoreboard objectives add cooldown_p_1 dummy
+scoreboard objectives add cooldown_p_2 dummy
+scoreboard objectives add cooldown_p_3 dummy
+scoreboard objectives add cooldown_w_1 dummy
+scoreboard objectives add cooldown_w_2 dummy
+scoreboard objectives add cooldown_w_3 dummy
+scoreboard objectives add cooldown_m_1 dummy
+scoreboard objectives add cooldown_m_2 dummy
+scoreboard objectives add cooldown_m_3 dummy
+scoreboard objectives add cooldown_n_1 dummy
+scoreboard objectives add cooldown_n_2 dummy
+scoreboard objectives add cooldown_n_3 dummy
+scoreboard objectives add cooldown_a_1 dummy
+scoreboard objectives add cooldown_a_2 dummy
+scoreboard objectives add cooldown_a_3 dummy
+#
+#
 #scoreboard objectives setdisplay below_name kill
 tellraw @a {"rawtext":[{"text":"§aScores instaladas con exito (§d5§f/§d10§b)!"}]}
 setblock -2 62 5 air

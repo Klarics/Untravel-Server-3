@@ -1,0 +1,24 @@
+{
+    "format_version": "1.19.0",
+    "minecraft:item": {
+      "description": {
+        "identifier": "mx:paladin_002",
+        "category": "Items"
+      },
+      "components": {
+        "minecraft:icon": {
+          "texture": "barriergray"
+        },
+        "minecraft:display_name": {
+          "value": "§eFuerza"
+        },
+        "minecraft:max_stack_size": 1,
+        "minecraft:foil": true,
+        "minecraft:damage": -1,
+        "minecraft:on_use": {
+          "on_use": {}
+        }
+      },
+      "events": {}
+    }
+  }

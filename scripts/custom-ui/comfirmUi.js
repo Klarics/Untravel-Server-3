@@ -1,5 +1,5 @@
 import { ActionFormData } from "@minecraft/server-ui";
-import { paladinClass } from "./paladinUi";
+import { paladinClass } from "./paladinClass/paladinUi";
 
 const functionDefinitions = Object.setPrototypeOf(
   {
