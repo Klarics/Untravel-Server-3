@@ -34,7 +34,7 @@ export function cooldown_p_1(ticks) {
         playerCombat.runCommandAsync(
           `scoreboard players remove @s cooldown_p_1 1 `
         );
-        playerCombat.runCommandAsync(`tag @s remove uiCooldownClass`);
+        playerCombat.runCommandAsync(`tag @s remove cooldown_p_1`);
         playerCombat.runCommandAsync(
           `scoreboard players set @s cooldown_p_1 0`
         );
@@ -49,6 +49,29 @@ export function cooldown_p_1(ticks) {
   }
 }
 
+export function cooldown_p_2(ticks) {
+  let playerCombat;
+  for (let pl of world.getPlayers()) {
+    if (pl.hasTag("cooldown_p_2")) {
+      playerCombat = pl;
+      if (getScore(playerCombat, "cooldown_p_2") == 7) {
+        playerCombat.runCommandAsync(
+          `scoreboard players remove @s cooldown_p_2 1 `
+        );
+        playerCombat.runCommandAsync(`tag @s remove cooldown_p_2`);
+        playerCombat.runCommandAsync(
+          `scoreboard players set @s cooldown_p_2 0`
+        );
+
+        if (ticks % 20 === 0) {
+          playerCombat.runCommandAsync(
+            `scoreboard players add @s cooldown_p_2 1 `
+          );
+        }
+      }
+    }
+  }
+}
 //   for () {
 //     if () {
 
