@@ -50,6 +50,9 @@ scoreboard objectives add cooldown_a_1 dummy
 scoreboard objectives add cooldown_a_2 dummy
 scoreboard objectives add cooldown_a_3 dummy
 #
+scoreboard objectives add speed dummy
+scoreboard objectives add absorsion dummy
+scoreboard objectives add resistance dummy
 #
 #scoreboard objectives setdisplay below_name kill
 tellraw @a {"rawtext":[{"text":"§aScores instaladas con exito (§d5§f/§d10§b)!"}]}

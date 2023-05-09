@@ -8,3 +8,6 @@ scoreboard players add @a trash 0
 scoreboard players add @a clase 0
 scoreboard players add @a time_10 0
 scoreboard players add @a uiCooldown 0
+scoreboard players add @a speed 0
+scoreboard players add @a absorsion 0
+scoreboard players add @a resistance 0

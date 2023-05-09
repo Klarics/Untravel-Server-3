@@ -24,6 +24,38 @@ export function cooldownClassfunction(ticks) {
 }
 //
 //
+export function speed(){
+  for (let pl of world.getPlayers()) {
+    if (getScore(pl, "speed") >= 0) {
+      let levelspeed = getScore(pl, "speed")
+      pl.runCommandAsync(`effect @s speed 3 ${levelspeed-1}`)
+      
+    }
+  }
+}
+//
+//
+export function resistance(){
+  for (let pl of world.getPlayers()) {
+    if (getScore(pl, "resistance") >= 0) {
+      let levelresistance = getScore(pl, "resistance")
+      pl.runCommandAsync(`effect @s resistance 3 ${levelresistance-1}`)
+      
+    }
+  }
+}
+//
+//
+export function absorption(){
+  for (let pl of world.getPlayers()) {
+    if (getScore(pl, "absorsion") >= 0) {
+      let levelabsorption = getScore(pl, "absorsion")
+      pl.runCommandAsync(`effect @s absorption 5 ${levelabsorption-1}`)
+      
+    }
+  }
+}
+//
 //
 export function cooldown_p_1(ticks) {
   let playerCombat;
