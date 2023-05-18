@@ -1,6 +1,9 @@
 import { world } from "@minecraft/server";
 import { getScore } from "./utilsMx";
 
+import { onJoin } from "./misc/onjoin";
+
+
 export function cooldownClassfunction(ticks) {
   let playerCombat;
   for (let pl of world.getPlayers()) {
@@ -23,6 +26,18 @@ export function cooldownClassfunction(ticks) {
   }
 }
 //
+export function newJoin(){
+  for (const pl of world.getPlayers()) {
+    if (!pl.hasTag("vivo")) {
+      onJoin(pl)
+      pl.runCommandAsync(`effect @s regeneration 6 3 true`)
+      pl.runCommandAsync(`replaceitem entity @s slot.hotbar 0 mx:class 1 0 {"minecraft:item_lock":{"mode":"lock_in_slot"},"minecraft:keep_on_death":{}}`)
+      pl.runCommandAsync(`tellraw @a {"rawtext":[{"text":"§d§lMiembro nuevo!"}]}`)
+      pl.runCommandAsync(`xp 1l @s`)
+      pl.runCommandAsync(`tag @s add vivo`)
+    }
+  }
+}
 //
 export function speed(){
   for (let pl of world.getPlayers()) {
