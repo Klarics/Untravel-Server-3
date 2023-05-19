@@ -1,0 +1,1 @@
+summon npc ~1 ~-2 ~
